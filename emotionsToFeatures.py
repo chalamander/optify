@@ -33,4 +33,4 @@ def getFeatureJson():
     tempo = 90 + ((anger - contempt + disgust - fear + happiness - sadness) * 100)
     # encoding results as JSON object
     json_return = json.dumps({'danceability': str(dance), 'energy': str(energy), 'mode': str(mode), 'valence': str(valence), 'tempo': str(tempo)})
-    return json.dumps(json_return)
+    return json_return
