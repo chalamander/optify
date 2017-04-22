@@ -1,0 +1,24 @@
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  text-align: center;
+}
+
+#main {
+  font-size: 70px;
+  padding-bottom: 10px;
+}
+
+.jumbotron {
+  background-color: #1db954;
+  text-align: center;
+}
+
+.jumbotron {
+  color: #fff;
+}
+
+#spotify-image {
+  height: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
