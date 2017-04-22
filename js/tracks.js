@@ -5,7 +5,7 @@ function getElement(obj, key, element, place){
       console.log(value.name);
 
       var button = document.createElement(element);
-      button.innerHTML = value.name;
+      button.innerHTML = "<a href='https://open.spotify.com/track'" + value.url + "'>" + value.name + "";
       var placeEl = document.getElementById(place)
       placeEl.append(button);
     }
