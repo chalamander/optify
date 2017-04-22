@@ -1,6 +1,6 @@
 /* global trackListing */
 
-trackListing([
+getElement([
   {"name":"Test Playlist 1", "URI": "234567890oiuytrdcvbnkiuy543456789oiu"},
   {"name":"Test Playlist 2", "URI": "489ijhbj3287ryuufhif2hifh29fh92hfu29"},
   {"name":"Test Playlist 3", "URI": "15626491rhwehofodsfhwr923497ehfoffhf"},
