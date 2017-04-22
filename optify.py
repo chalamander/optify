@@ -1,3 +1,4 @@
+# obtains the emotions of a given image by making a request to the Microsoft API
 import httplib, urllib, base64, json, requests
 
 headers = {
@@ -19,5 +20,3 @@ def getEmotionJson():
     result = result['scores']
     conn.close()
     return json.dumps(result)
-
-getEmotionJson()
