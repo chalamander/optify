@@ -1,0 +1,17 @@
+body {
+  font-family: Arial;
+  text-align: center;
+}
+
+.jumbotron {
+  background-color: #1db954;
+  text-align: center;
+}
+
+.jumbotron {
+  color: #fff;
+}
+
+#spotify-image {
+  height: 200px;
+}
