@@ -6,7 +6,9 @@ function getElement(obj, key, place){
       var urlString = value.URI;
 
       var button = document.createElement('button');
-      button.innerHTML = "<a href='https://open.spotify.com/track/" + urlString + "'>" + value.name + "";
+      button.setAttribute("type", "submit");
+      button.setAttribute("value", urlString);
+      button.innerHTML = value.name;
       var placeEl = document.getElementById(place)
       placeEl.append(button);
     }
