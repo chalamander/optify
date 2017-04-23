@@ -21,8 +21,11 @@ playlist_id = uri.split(':')[4]
 
 #get playlist contents using spotipy
 results = sp.user_playlist(username, playlist_id)
+
 #r = requests.get('https://api.spotify.com/v1/users/{user_id}/playlists/' + playlist_id)
 #print r.text
+
+#r = requests.get(' https://accounts.spotify.com/authorize/?client_id=81c9574604a9457e88fa2e520604e5b6&response_type=code&redirect_uri=https://localhost/&scope=user-read-private&state=34fFs29kd09')
 
 print 'Calculating....'
 
