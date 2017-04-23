@@ -13,7 +13,8 @@ body {
   text-align: center;
 }
 
-.jumbotron {
+.jumbotron p {
+  font-family: "Helvetica Neue", Arial, sans-serif;
   color: #fff;
 }
 
