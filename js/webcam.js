@@ -15,7 +15,7 @@ function snapshot()
 	canvas.height = video.videoHeight;
 	canvas.getContext('2d').drawImage(video, 0, 0);
   var image = canvas.toDataURL('image/jpeg');
-  console.log("<img src='" + image + "'/>'");
+  console.log(image);
 }
 
 function noStream()
