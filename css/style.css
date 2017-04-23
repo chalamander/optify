@@ -22,3 +22,19 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+#trackFromUser {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+
+#trackFromUser button {
+  padding: 10px 20px;
+  margin-top: 25px;
+  text-align: center;
+  width: 200px;
+  height: auto;
+}
