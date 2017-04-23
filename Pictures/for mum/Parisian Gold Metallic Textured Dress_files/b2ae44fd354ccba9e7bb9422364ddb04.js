@@ -1,0 +1,1 @@
+Bootstrapper.bindImmediate(function(){var Bootstrapper=window["Bootstrapper"];var ensightenOptions=Bootstrapper.ensightenOptions;var advertiserId="1946";var script="//"+"www.dwin1.com/"+advertiserId+".js";Bootstrapper.insertScript(script)},1108140,343826);

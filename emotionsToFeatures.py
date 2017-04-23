@@ -13,14 +13,11 @@ def normaliseValue(value):
 def getFeatureJson():
     json_string = json.loads(getEmotionJson())
     # defining emotion variables
-    anger = json_string["anger"]
-    contempt = json_string["contempt"]
-    disgust = json_string["disgust"]
-    fear = json_string["fear"]
-    happiness = json_string["happiness"]
-    neutral = json_string["neutral"]
-    sadness = json_string["sadness"]
-    surprise = json_string["surprise"]
+    anger = json_string["anger"] #tempo(>120), energy(>0.8), mode(1)
+    fear = json_string["fear"] #energy(<0.6)
+    happiness = json_string["happiness"] #energy(0.6-0.8), dance(<0.7)
+    sadness = json_string["sadness"] #energy(<0.6), mode(1), valence(<0.3)
+    surprise = json_string["surprise"] #tempo(>120), dance(<0.7)
     # defining Spotify features
     dance = 0.5 + (anger - contempt + disgust - fear + happiness - sadness + surprise)
     dance = normaliseValue(dance)

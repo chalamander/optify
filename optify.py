@@ -10,13 +10,19 @@ headers = {
 params = urllib.urlencode({
 })
 
-def getEmotionJson():
+#def getEmotionJson(body):
+def getEmotionJson(body):
     conn = httplib.HTTPSConnection('westus.api.cognitive.microsoft.com')
-    conn.request("POST", "/emotion/v1.0/recognize?%s" % params, "{ 'url': 'http://img.timeinc.net/time/daily/2010/1011/poy_nomination_agassi.jpg' }", headers)
+    #print (body)
+    conn.request("POST", "/emotion/v1.0/recognize?%s" % params, "{ 'url': '" + body + "'}" , headers)
     response = conn.getresponse()
     data = response.read().decode('utf-8')
     json_obj = json.loads(data)
+    #print(json_obj)
     result = json_obj[0]
     result = result['scores']
+    #print(result)
     conn.close()
     return json.dumps(result)
+
+getEmotionJson('https://i.imgur.com/f2otPhq.jpg')

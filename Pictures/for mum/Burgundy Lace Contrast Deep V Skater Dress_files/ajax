@@ -1,0 +1,63 @@
+var mboxCurrent = mboxFactories.get('default').get('target-global-mbox',0);mboxCurrent.setOffer(new mboxOfferAjax('<!-- Offer Id: 295143  --><!--\nCampaign Name:\nExperience Name:\n-->\n<!-- Offer Id: 65603  --><!-- Offer Id: 17788  -->'));mboxCurrent.getOffer().setOnLoad(function() {
+var injMbox = {		
+	timeout:8000,
+	interval : 500,	
+	init: function(){
+		var that=this;
+		if ( typeof jQuery !== "undefined" ){
+			//on mbox load
+				mboxFactoryDefault.addOnLoad(function(){
+					//offer code
+					
+					// click track call
+				var subtotal=jQuery(".price-subtotal-value");
+				if(subtotal.length>0 && !subtotal.hasClass('done')){
+                                       subtotal.addClass('done');
+					injMbox.mbox_track();
+					var subtotal_html=subtotal.html();
+					subtotal_html_number=subtotal_html.replace(/[^\d\.]/g, '');
+					console.log(subtotal_html_number);
+					if(subtotal_html_number<20){
+						mboxUpdate("mboxClickTrack","profile.subtotal=false");}
+					else{
+						mboxUpdate("mboxClickTrack","profile.subtotal=true");
+						}
+				}
+				
+	
+
+				})
+			
+		} else { 
+			if (that.timeout> that.interval) {
+                setTimeout(that.init, that.interval);
+				 that.timeout -= that.interval;
+				 
+            }
+			          
+		}
+	},
+mbox_track:function(){
+	var mbox = mboxFactoryDefault.getMboxes().get("mboxClickTrack");
+					if (mbox.length()==0) { 
+						var d = document.createElement("div");
+						d.id = "mboxClickTrack_div";
+						document.body.appendChild(d);
+						mboxDefine("mboxClickTrack_div","mboxClickTrack");
+					}
+}
+  
+}
+
+var test="";
+if(test.indexOf('9826')!=-1 && window.location.href.indexOf('cart')!=-1){
+injMbox.init();
+console.log('plugin');
+}
+console.log('tested');
+
+/*mboxHighlight+ (1of2) v1 ==> Response Plugin*/
+window.ttMETA=(typeof(window.ttMETA)!='undefined')?window.ttMETA:[];window.ttMETA.push({'mbox':'target-global-mbox','campaign':'','experience':'','offer':''});window.ttMBX=function(x){var mbxList=[];for(i=0;i<ttMETA.length;i++){if(ttMETA[i].mbox==x.getName()){mbxList.push(ttMETA[i])}}return mbxList[x.getId()]}
+
+var mboxTrack=function(mbox,params){var m,u,i,f=mboxFactoryDefault;if(f.getMboxes().length()>0){m=f.getMboxes().getById(0);u=m.getURL().replace("mbox="+m.getName(),"mbox="+mbox).replace("mboxPage="+f.getPageId(),"mboxPage="+mboxGenerateId())+'&'+params,i=new Image();i.style.display='none';i.src=u;document.body.appendChild(i)}else{f.getSignaler().signal('onEvent',mbox+'&'+params)}},mboxTrackLink=function(mbox,params,url){mboxTrack(mbox,params);setTimeout("location='"+url+"'",500)}; function tt_Log(URL,mbox){ if(mbox)mboxTrack('NL_'+mbox+'onClick','Destination='+URL); else mboxTrack('NL_onClick','Destination='+URL); } function tt_Redirect(URL){     mboxTrack('NL_onClick','Destination='+URL);     setTimeout("location='"+URL+"'",500); }
+});mboxCurrent.loaded();mboxFactories.get('default').get('target-global-mbox',0).cancelTimeout();mboxFactories.get('default').get('target-global-mbox',0).setOffer(new mboxOfferDefault()).show();mboxFactories.get('default').getPCId().forceId("1449051625046-67432.21_13");
