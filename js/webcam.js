@@ -14,6 +14,8 @@ function snapshot()
 	canvas.width = video.videoWidth;
 	canvas.height = video.videoHeight;
 	canvas.getContext('2d').drawImage(video, 0, 0);
+  var image = canvas.toDataURL('image/jpeg');
+  console.log("<img src='" + image + "'/>'");
 }
 
 function noStream()
@@ -58,7 +60,7 @@ function gotStream(stream)
 		if (video) stop();
 	};
 	stream.onended = noStream;
-	if (window.webkitURL) video.src = window.webkitURL.createObjectURL(stream);
+	if (window.URL) video.src = window.webkitURL.createObjectURL(stream);
 	else if (video.mozSrcObject !== undefined)
 	{//FF18a
 		video.mozSrcObject = stream;
