@@ -1,0 +1,41 @@
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  text-align: center;
+}
+
+#main {
+  font-size: 70px;
+  padding-bottom: 10px;
+}
+
+.jumbotron {
+  background-color: #1db954;
+  text-align: center;
+}
+
+.jumbotron p {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #fff;
+}
+
+#spotify-image {
+  height: 250px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+#trackFromUser {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+
+#trackFromUser button {
+  padding: 10px 20px;
+  margin-top: 25px;
+  text-align: center;
+  width: 200px;
+  height: auto;
+}
